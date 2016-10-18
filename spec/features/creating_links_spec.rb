@@ -1,6 +1,4 @@
 require 'spec_helper'
-# DatabaseCleaner.clean
-p "Hello 1"
 
 feature "Save a website" do
   scenario "Add site address and title" do
