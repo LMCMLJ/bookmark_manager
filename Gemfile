@@ -7,3 +7,8 @@ gem 'sinatra'
 gem 'rspec'
 gem 'rspec-sinatra'
 gem 'bcrypt'
+gem 'dm-transactions'
+
+group :test do
+  gem 'database_cleaner'
+end

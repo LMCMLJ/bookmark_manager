@@ -1,4 +1,6 @@
 require 'spec_helper'
+# DatabaseCleaner.clean
+p "Hello 2"
 
 feature "Quickly go to web sites I regularly visit" do
   scenario "Saved links are shown on homepage" do
