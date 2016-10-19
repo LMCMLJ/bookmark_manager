@@ -1,1 +1,1 @@
-gem install bundler && ruby app/app.rb
+web: gem install bundler && bundle install && ruby app/app.rb
