@@ -9,12 +9,10 @@ class Link
   property :url, String
   property :title, String
 
-  def print_tags
-    tag_string = ''
-    tags.each do |tag|
-      tag_string << tag.name
-    end
-    tag_string
+  def tag_string
+    string = ''
+    tags.each{|tag| string << tag.name}
+    string
   end
 
   def split_tag_input(tag_input)
