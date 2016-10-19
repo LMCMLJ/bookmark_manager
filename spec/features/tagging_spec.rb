@@ -19,8 +19,9 @@ feature 'tagging links' do
     end
 
     scenario 'tags appear on bookmark page' do
-      visit '/bookmarks'
-      expect(page).to have_text('beer', 'cake', 'table tennis')
+      expect(page).to have_text('#beer')
+      expect(page).to have_text('#table tennis')
+      expect(page).to have_text('#cake')
     end
   end
 end

@@ -2,8 +2,9 @@
 
 <ul id='links'>
   <% @links.each do |link| %>
-    <li>
-      <a href="<%=link.url%>"><%= link.title %></a>
-    </li>
+    <div class="entry">
+      <a href="<%=link.url%>"><%= link.title %> </a>
+      <p>Tags: <%=link.tag_string%></p>
+    </div>
   <% end %>
 </ul>
