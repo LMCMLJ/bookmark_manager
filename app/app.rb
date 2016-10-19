@@ -5,6 +5,7 @@ require_relative 'models/link'
 
 class BookmarkManager < Sinatra::Base
 
+  database_setup
 
   get "/" do
     @links = Link.all
@@ -16,7 +17,12 @@ class BookmarkManager < Sinatra::Base
   end
 
   post "/" do
-    Link.create(url: params[:url], title: params[:title])
+    link = Link.create(url: params[:url], title: params[:title])
+    tags = link.split_tag_input(params[:tags])
+    tags.each do |tag_name|
+      tag = Tag.first_or_create(:name=>tag_name)
+      LinkTag.create(:link => link, :tag => tag)
+    end
     redirect "/"
   end
 
