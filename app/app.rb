@@ -19,7 +19,7 @@ class BookmarkManager < Sinatra::Base
 
   post "/" do
     bookmark = Bookmark.new
-    bookmark.create_link(url: params[:url], title: params[:title])
+    bookmark.create_link(params[:url], params[:title])
     bookmark.add_tags(params[:tags])
 
     tags.each do |tag_name|
