@@ -2,6 +2,7 @@ ENV['RACK_ENV'] ||= "development"
 require 'sinatra/base'
 require_relative "models/data_mapper_setup"
 require_relative 'models/link'
+require_relative 'models/bookmark'
 
 class BookmarkManager < Sinatra::Base
 
@@ -17,8 +18,10 @@ class BookmarkManager < Sinatra::Base
   end
 
   post "/" do
-    link = Link.create(url: params[:url], title: params[:title])
-    tags = link.split_tag_input(params[:tags])
+    bookmark = Bookmark.new
+    bookmark.create_link(url: params[:url], title: params[:title])
+    bookmark.add_tags(params[:tags])
+
     tags.each do |tag_name|
       tag = Tag.first_or_create(:name=>tag_name)
       LinkTag.create(:link => link, :tag => tag)
