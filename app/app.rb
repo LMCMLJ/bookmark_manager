@@ -9,6 +9,7 @@ class BookmarkManager < Sinatra::Base
   database_setup
 
   get "/" do
+    @bookmark = Bookmark.new
     @links = Link.all
     erb :index
   end
@@ -21,11 +22,6 @@ class BookmarkManager < Sinatra::Base
     bookmark = Bookmark.new
     bookmark.create_link(params[:url], params[:title])
     bookmark.add_tags(params[:tags])
-
-    tags.each do |tag_name|
-      tag = Tag.first_or_create(:name=>tag_name)
-      LinkTag.create(:link => link, :tag => tag)
-    end
     redirect "/"
   end
 

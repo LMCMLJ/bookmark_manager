@@ -4,7 +4,7 @@
   <% @links.each do |link| %>
     <div class="entry">
       <a href="<%=link.url%>"><%= link.title %> </a>
-      <p>Tags: <%=link.tags_to_string%></p>
+      <p>Tags: <%=bookmark.tags_to_string(@links.tags)%></p>
     </div>
   <% end %>
 </ul>
