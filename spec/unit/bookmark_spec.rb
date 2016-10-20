@@ -30,7 +30,7 @@ describe Bookmark do
 
   describe '#tags_to_string' do
     it 'returns string of tags belonging to the link' do
-      expect(bookmark.tags_to_string(@tags)).to eq('#beer #beer #beer ')
+      expect(bookmark.tags_to_string(@tags)).to eq('#beer #beer #beer')
     end
   end
 end

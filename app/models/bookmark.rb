@@ -16,9 +16,11 @@ class Bookmark
   end
 
   def tags_to_string(tags)
-    string = ''
-    tags.each{|tag| string << tag.name + ' '}
-    string
+    join_ary(tags.map {|tag| tag.name.to_s })
+  end
+
+  def join_ary(ary)
+    ary.join(" ")
   end
 
   def create_tag_instance(ary)
