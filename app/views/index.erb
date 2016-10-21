@@ -1,5 +1,5 @@
 <h1> Links </h1>
-
+<form action="/add"> <button type="submit">Add new link</button></form>
 <ul id='links'>
   <% @links.each do |link| %>
     <div class="entry">
@@ -8,3 +8,20 @@
     </div>
   <% end %>
 </ul>
+
+
+
+<style>
+
+  body {
+    background-color: #800000;
+  }
+
+  div {
+    margin: 5px;
+    padding: 20px;
+    background-color: #ff8080;
+    width: 500px;
+  }
+
+</style>
