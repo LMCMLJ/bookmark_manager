@@ -5,7 +5,7 @@ def add_link
 end
 
 def add_tag
-  fill_in("tags", with: '#table tennis')
+  fill_in("tags", with: 'table tennis')
 end
 
 def submit_form

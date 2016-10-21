@@ -27,11 +27,11 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/tags/:name' do
-    @search_tag = params[:name]
-    p params[:name]
     @bookmark = Bookmark.new
-    @links = Link.all
-    @filter_links = @links.select { |link| link.tags.each { |tag| tag.name == @search_tag } }
+    tag = Tag.first(name: params[:name])
+    p tag
+    @filter_links = tag ? tag.links : []
+    p @filter_links
     erb :filter_by_tags
   end
 

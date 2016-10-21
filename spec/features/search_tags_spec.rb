@@ -8,7 +8,7 @@ feature 'search tags' do
   end
 
   scenario 'can search the tagged links' do
-    fill_in('filter_by_tags', with: '#table tennis')
+    visit '/tags/table%20tennis'
     expect(page).to have_text('Old')
   end
 end

@@ -6,11 +6,6 @@
       <button type="submit">Add new link</button>
     </form>
 
-    <form action='/tags' method="get">
-      <input type="text" name="name" value="<%= @name %>" placeholder="#beer" required>
-      <input type="submit" value="Search"></input>
-    </form>
-
   </div>
   <div class='main'>
     <% @links.each do |link| %>
