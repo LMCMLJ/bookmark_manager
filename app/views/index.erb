@@ -1,26 +1,38 @@
-<h1> Links </h1>
-<form action="/add"> <button type="submit">Add new link</button></form>
-<ul id='links'>
-  <% @links.each do |link| %>
-    <div class="entry">
-      <a href="<%=link.url%>"><%= link.title %> </a>
-      <p>Tags: <%=@bookmark.tags_to_string(link.tags)%></p>
-    </div>
-  <% end %>
-</ul>
+<body>
+  <div class="header">
+    <h1> Links </h1>
 
+    <form action="/add">
+      <button type="submit">Add new link</button>
+    </form>
+
+    <form action='/tags' method="get">
+      <input type="text" name="name" value="<%= @name %>" placeholder="#beer" required>
+      <input type="submit" value="Search"></input>
+    </form>
+
+  </div>
+  <div class='main'>
+    <% @links.each do |link| %>
+      <div class="bookmark">
+        <a href="<%=link.url%>"><%= link.title %> </a>
+        <p>Tags: <%=@bookmark.tags_to_string(link.tags)%></p>
+      </div>
+    <% end %>
+  </div>
+<body>
 
 
 <style>
 
   body {
-    background-color: #800000;
+
   }
 
-  div {
+  .bookmark {
     margin: 5px;
     padding: 20px;
-    background-color: #ff8080;
+    background-color: #ffffe6;
     width: 500px;
   }
 

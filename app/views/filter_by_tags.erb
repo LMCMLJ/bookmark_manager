@@ -1,0 +1,25 @@
+<body>FILTER BY TAGS
+  <% @filter_links.each do |link| %>
+  <div class="bookmark">
+    <a href="<%=link.url%>"><%= link.title %> </a>
+    <p>Tags: <%=@bookmark.tags_to_string(link.tags)%></p>
+  </div>
+  <% end %>
+</body>
+
+
+
+<style>
+
+  body {
+
+  }
+
+  .bookmark {
+    margin: 5px;
+    padding: 20px;
+    background-color: #ffffe6;
+    width: 500px;
+  }
+
+</style>
