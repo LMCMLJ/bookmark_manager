@@ -1,11 +1,13 @@
 <body>
   <div class="header">
-    <h1> Links </h1>
-
+    <div class="h_text"><h1> BOOKMRKR </h1></div>
+    <div class="buttons">
     <form action="/add">
-      <button type="submit">Add new link</button>
+      <input type="submit" value="sign_in" name="choice">
+      <input type="text" name="choice">
+      <input type="submit" value="new_link" name="choice">
     </form>
-
+  </div>
   </div>
   <div class='main'>
     <% @links.each do |link| %>
@@ -20,14 +22,62 @@
 
 <style>
 
-  body {
+  .h_text {
+    display: flex;
+    float: left;
+  }
 
+  h1 {
+    color: #f0f5f5;
+  }
+
+  body {
+    display: block;
+    float: top;
+    font-family: Verdana;
+  }
+
+  input {
+    float: right;
+    height: 100%;
+    width: 10%;
+    font-size: 18px;
+    background-color: #476b6b; /* Green */
+    border: 2px solid #476b6b;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  input[type="text"] {
+    width: 20%;
+    background-color: #f0f5f5;
+    color: black;
+  }
+
+  .header_text {
+    width: 20%;
+  }
+
+  .header {
+    float: top;
+    margin: 5px;
+    width: 100%;
+    height: 10%;
+    background-color: #669999;
+    text-color: #f0f5f5;
+  }
+
+  .main {
+    float: top;
   }
 
   .bookmark {
     margin: 5px;
     padding: 20px;
-    background-color: #ffffe6;
+    background-color: #f0f5f5;
     width: 500px;
   }
 
